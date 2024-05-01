@@ -12,7 +12,7 @@ function Header() {
   }
 
   return (
-    <div className="flex bg-[rgb(255,248,240)] items-center justify-between relative text-slate-800">
+    <div className="flex items-center justify-between relative bg-transparent  px-12 text-slate-800">
       <Image
         src="/images/logoz.png"
         alt=""
@@ -25,7 +25,7 @@ function Header() {
           Home
         </Link>
         <button
-          onMouseOverCapture={toggleMenu}
+          onMouseEnter={toggleMenu}
           className="flex hover:underline"
         >
           Pages

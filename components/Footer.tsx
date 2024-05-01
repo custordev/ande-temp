@@ -1,9 +1,9 @@
-// import {
-//   FaFacebookF,
-//   FaInstagram,
-//   FaLinkedinIn,
-//   FaXTwitter,
-// } from "react-icons/fa6";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+} from "react-icons/fa6";
 import Image from "next/image";
 import React from "react";
 
@@ -15,16 +15,16 @@ function Footer() {
           <h2>Social media</h2>
           <div className="flex gap-5 ">
             <span className="py-4 bg-[rgb(255,248,240)] px-4 rounded-full">
-              {/* <FaFacebookF /> */}
+              <FaFacebookF />
             </span>
             <span className="py-4 bg-[rgb(255,248,240)] px-4 rounded-full">
-              {/* <FaInstagram /> */}
+              <FaInstagram />
             </span>
             <span className="py-4 bg-[rgb(255,248,240)] px-4 rounded-full">
-              {/* <FaXTwitter /> */}
+              <FaXTwitter />
             </span>
             <span className="py-4 bg-[rgb(255,248,240)] px-4 rounded-full">
-              {/* <FaLinkedinIn /> */}
+              <FaLinkedinIn />
             </span>
           </div>
         </div>

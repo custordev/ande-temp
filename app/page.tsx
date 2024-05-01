@@ -1,10 +1,13 @@
 // import { ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
 function page() {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5  min-h-screen px-12">
+      <Header />
       <div className="flex bg-[rgb(235,255,116)]  py-16 rounded-3xl  px-8">
         <div className="flex flex-col gap-8 w-[70vw] ">
           <h2 className="text-[4rem]  font-bold text-slate-800">
@@ -28,7 +31,7 @@ function page() {
             </button>
             <button className="flex bg-gray-100 hover:bg-transparent  border border-black py-2 px-4 gap-2 text-slate-800 rounded-3xl">
               Learn More
-              {/* <ArrowRight /> */}
+              <ArrowRight />
             </button>
           </div>
         </div>
