@@ -1,14 +1,21 @@
-import Header from "@/components/Header";
+"use client";
+import NavBar from "@/components/NavBar";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function page() {
+  useEffect(() => {
+    Aos.init();
+    Aos.refresh();
+  }, []);
   return (
     <div className="bg-[#8DE5E1] text-slate-800 flex flex-col gap-4">
-      <Header />
-      <div className="flex flex-col items-center justify-center ">
-        <div className="flex flex-col gap-4 items-center">
-          <h2 className="text-[3.5rem] font-semibold">
+      <NavBar />
+      <div className="flex flex-col items-center justify-center  ">
+        <div data-aos="fade-up" className="flex flex-col gap-4 items-center">
+          <h2 className="lg:text-[3.5rem] text-3xl text-center font-semibold">
             Effortless financial management
           </h2>
           <p className="flex text-center ">
@@ -20,13 +27,16 @@ function page() {
             <Image
               width={1080}
               height={1080}
-              className="w-[75vw] h-[85vh] rounded-2xl"
+              className="lg:w-[75vw] lg:h-[85vh] w-auto rounded-2xl"
               src="/images/aboutimage1.jpg"
               alt=""
             />
           </div>
         </div>
-        <div className="bg-slate-100 flex flex-col gap-16 py-20 items-center justify-center w-screen ">
+        <div
+          data-aos="fade-up"
+          className="bg-slate-100 flex flex-col gap-16 py-20 items-center justify-center w-screen "
+        >
           <div className="flex flex-col lg:py-20 lg:flex-row gap-6 lg:gap-20 items-center justify-center">
             <div className="flex items-center justify-center flex-col gap-3">
               <Image
@@ -69,7 +79,7 @@ function page() {
               </p>
             </div>
           </div>
-          <div className="flex w-[95vw] h-48 rounded-3xl bg-[#EBFF74] px-16 flex-col lg:flex-row gap-6 items-center justify-between ">
+          <div className="flex lg:w-[95vw] lg:h-48 rounded-3xl bg-[#EBFF74] lg:px-16 py-10 w-[23rem]  flex-col lg:flex-row gap-6 items-center lg:justify-between justify-center text-center">
             <div className="flex flex-col gap-4">
               <h3 className="text-3xl font-bold">500</h3>
               <p>Trusted Patners</p>
@@ -87,20 +97,24 @@ function page() {
               <p>Total reviews</p>
             </div>
           </div>
-          <div className="flex  flex-col lg:flex-row items-center justify-between w-screen px-28">
+          <div
+            data-aos="fade-up"
+            className="flex  flex-col lg:flex-row items-center justify-between w-screen lg:px-28 px-4"
+          >
             <div className="relative ">
               <Image
                 width={1080}
                 height={1080}
-                className="w-96 h-auto rounded-2xl"
+                className="lg:w-96  lg:h-auto rounded-2xl"
                 src="/images/aboutimage2.jpg"
                 alt=""
               />
               <div className=" -right-44 -bottom-12 absolute">
                 <Image
+                  data-aos="fade-up"
                   width={1080}
                   height={1080}
-                  className="w-96 h-72 "
+                  className="w-96 hidden lg:flex h-72 "
                   src="/images/aboutimage3.svg"
                   alt=""
                 />
@@ -111,7 +125,7 @@ function page() {
                 <Image
                   width={1080}
                   height={1080}
-                  className="w-8 h-16"
+                  className="  w-8 h-16"
                   src="/images/bullseye.svg"
                   alt=""
                 />
@@ -143,10 +157,13 @@ function page() {
             </div>
           </div>
         </div>
-        <div className="bg-gradient-to-t from-slate-100 via-slate-100 to-[#EBFF74] flex flex-col gap-16 items-center justify-center h-[80vh] w-screen">
-          <div className="bg-[#00313E] text-slate-100 h-80 py-8 rounded-3xl flex flex-col lg:items-center  justify-between lg:px-20 lg:flex-row w-[80vw]">
+        <div
+          data-aos="fade-up"
+          className="bg-gradient-to-t from-slate-100 via-slate-100 to-[#EBFF74] flex flex-col gap-16 items-center justify-center lg:h-[80vh] h-[50vh] w-screen"
+        >
+          <div className="bg-[#00313E] text-slate-100 h-80 lg:py-8  rounded-3xl flex flex-col lg:items-center items-start  justify-between lg:px-20 lg:flex-row lg:w-[80vw] w-[90vw] px-4 py-4">
             <div className="flex flex-col gap-8">
-              <h2 className="font-bold text-[3rem] text-slate-100">
+              <h2 className="font-bold lg:text-[3rem] text-2xl text-slate-100">
                 Join thousands of <br /> satisfied users!
               </h2>
               <div>
@@ -198,11 +215,11 @@ function page() {
                   Tax preparation
                 </div>
               </div>
-              {/* <div className="">
+              {/* <div className="relative">
                 <Image
                   width={1080}
                   height={1080}
-                  className="w-80 h-80 object-left-bottom flex  "
+                  className=" -rotate-45 w-40 object-left-bottom flex absolute  "
                   src="/images/dashboard.svg"
                   alt=""
                 />
@@ -210,27 +227,44 @@ function page() {
             </div>
           </div>
         </div>
-        <div className="flex bg-slate-100 w-screen flex-col items-center gap-3">
-          <div className="flex flex-col gap-3 items-center">
-            <h2 className="font-semibold text-3xl">Meet Our Team</h2>
-            <p>
-              Our team comprises talented professionals committed to <br />{" "}
-              delivering exceptional financial services tailored to your <br />{" "}
-              needs.
+        <div
+          data-aos="fade-up"
+          className="flex bg-slate-100 w-screen flex-col items-center gap-3"
+        >
+          <div className="flex flex-col gap-3 items-center text-center">
+            <h2 className="font-semibold lg:text-4xl  text-xl">
+              Meet Our Team
+            </h2>
+            <p className="lg:w-96">
+              Our team comprises talented professionals committed to delivering
+              exceptional financial services tailored to your needs.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 py-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:py-14 py-4">
             <div className="flex flex-col gap-3 ">
               <Image
                 width={1080}
                 height={1080}
                 className="w-80 h-80 rounded-2xl"
-                src="/images/amandareed.jpg"
+                src="/images/samuelbishopjpg.jpg"
                 alt=""
               />
               <div>
-                <h3 className="font-semibold">Amanda reed</h3>
-                <p>Marketing</p>
+                <h3 className="font-semibold">Samuel Bishop</h3>
+                <p>Head Manager</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <Image
+                width={1080}
+                height={1080}
+                className="w-80 h-80 rounded-2xl"
+                src="/images/carolynortiz.jpg"
+                alt=""
+              />
+              <div>
+                <h3 className="font-semibold">Carolyn Otyz</h3>
+                <p>Marketing Manager</p>
               </div>
             </div>
             <div className="flex flex-col gap-3">
@@ -242,8 +276,8 @@ function page() {
                 alt=""
               />
               <div>
-                <h3 className="font-semibold">Amanda reed</h3>
-                <p>Marketing</p>
+                <h3 className="font-semibold">Ande Vasquez</h3>
+                <p>CEO ANDE</p>
               </div>
             </div>
             <div className="flex flex-col gap-3">
@@ -251,20 +285,7 @@ function page() {
                 width={1080}
                 height={1080}
                 className="w-80 h-80 rounded-2xl"
-                src="/images/amandareed.jpg"
-                alt=""
-              />
-              <div>
-                <h3 className="font-semibold">Amanda reed</h3>
-                <p>Marketing</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <Image
-                width={1080}
-                height={1080}
-                className="w-80 h-80 rounded-2xl"
-                src="/images/amandareed.jpg"
+                src="/images/billyvasquez.jpg"
                 alt=""
               />
               <div>

@@ -1,3 +1,4 @@
+"use client";
 import {
   FaFacebookF,
   FaInstagram,
@@ -5,12 +6,22 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import Link from "next/link";
 
 function Footer() {
+  useEffect(() => {
+    Aos.init();
+    Aos.refresh();
+  }, []);
+  function getFullYear() {
+    return new Date().getFullYear();
+  }
   return (
-    <section className="bg-[rgb(0,49,62)] ">
-      <div className="bg-[rgb(235,255,116)] flex justify-evenly items-center rounded-b-[2.5rem] py-8 px-6 ">
+    <section data-aos="fade-up" className="bg-[rgb(0,49,62)] ">
+      <div className="bg-[rgb(235,255,116)] flex lg:flex-row flex-col items-start justify-evenly lg:items-center rounded-b-[2.5rem] py-8 px-6 ">
         <div className="flex flex-col gap-4">
           <h2>Social media</h2>
           <div className="flex gap-5 ">
@@ -30,19 +41,19 @@ function Footer() {
         </div>
         <div className="flex flex-col gap-3">
           <h2>Subscribe to new settler</h2>
-          <form className="bg-[rgb(255,248,240)] py-1.5 flex gap-6 px-3 focus-within:bg-sky-50 rounded-3xl ">
+          <form className="bg-[rgb(255,248,240)] py-1.5 flex lg:gap-6 px-3 focus-within:bg-sky-50 rounded-3xl ">
             <input
               type="text"
               placeholder="Enter your email"
               className="outline-none bg-transparent  border-none"
             />
-            <button className="bg-[rgb(0,49,62)] hover:bg-[rgba(0,49,62,0.92)] py-2 px-6 rounded-3xl text-gray-100">
+            <button className="bg-[rgb(0,49,62)] hover:bg-[rgba(0,49,62,0.92)] py-2 lg:px-6 px-3 rounded-3xl text-gray-100">
               Subscribe
             </button>
           </form>
         </div>
       </div>
-      <div className=" px-8 flex justify-between  gap-4 ">
+      <div className=" px-8 lg:flex lg:flex-row grid grid-cols-1 justify-between  gap-4 ">
         <div>
           <Image
             src="/images/logof.png"
@@ -51,7 +62,6 @@ function Footer() {
             height={1080}
             className="w-28 h-28 object-cover"
           />
-
           <div className="text-gray-200 flex flex-col gap-2 px-5">
             <h2 className="font-bold">Contact</h2>
             <p>+44 (0) 161808123</p>
@@ -62,7 +72,7 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div className="flex gap-6 py-12">
+        <div className=" gap-6 py-12 lg:flex lg:flex-row grid grid-cols-2">
           <div className="text-gray-200 flex flex-col gap-4 px-5">
             <h2 className="font-bold">Contact</h2>
             <div className="flex flex-col gap-2">
@@ -105,6 +115,26 @@ function Footer() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="sm:flex flex flex-col lg:flex-row gap-2 items-center justify-center lg:px-6  sm:items-center sm:justify-between">
+        <div className="text-sm flex gap-2  sm:text-center text-gray-50">
+          <Link href="/" className="hover:underline">
+            ANDE Template
+          </Link>
+          <span className="flex "> {getFullYear()}</span>
+          <Link
+            href="https://coding-school-typescript.vercel.app/"
+            className="hover:underline"
+          >
+            . Powerd by Desishub.
+          </Link>
+        </div>
+        <Link
+          className="text-sm text-muted-foreground hover:text-gray-100"
+          href={"https://custordev.vercel.app/"}
+        >
+          Developed by CustorDev{" "}
+        </Link>
       </div>
     </section>
   );
