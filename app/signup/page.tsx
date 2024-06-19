@@ -1,3 +1,5 @@
+// import SignupForm from "@/components/Auth/SignupForm";
+// import SignupForm from "@/components/Auth/SignupForm";
 import SignupForm from "@/components/Auth/SignupForm";
 import NavBar from "@/components/NavBar";
 
@@ -7,7 +9,7 @@ function page() {
   return (
     <main className="flex flex-col gap-6  bg-[#FFF8F0] text-slate-800">
       <NavBar />
-      <SignupForm />
+      <SignupForm role="USER" />
     </main>
   );
 }

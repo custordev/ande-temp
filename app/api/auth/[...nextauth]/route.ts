@@ -16,10 +16,11 @@ export const authOptions: NextAuthOptions = {
     error: "/error",
   },
   providers: [
+  
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "email", placeholder: "jb@gmail.com" },
+        email: { label: "Email", type: "email", placeholder: "user@gmail.com" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
@@ -61,8 +62,8 @@ export const authOptions: NextAuthOptions = {
       }
       return token;
     },
+   
   },
-
   debug: true,
 };
 

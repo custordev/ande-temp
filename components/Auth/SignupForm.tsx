@@ -1,6 +1,5 @@
 "use client";
 import { createUser } from "@/app/actions/user";
-import { signupProps } from "@/types/types";
 import { User, UserRole } from "@prisma/client";
 import { Loader } from "lucide-react";
 import Image from "next/image";
@@ -10,7 +9,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
-export default function SignupForm({ role = "USER" }: { role: UserRole }) {
+export default function signupForm({ role = "USER" }: { role: UserRole }) {
   const {
     register,
     handleSubmit,
