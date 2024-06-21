@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -24,6 +23,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { updateUserById } from "@/app/actions/user";
+import { Loader } from "lucide-react";
 
 const FormSchema = z.object({
   token: z.string().min(6, {
@@ -114,7 +114,26 @@ export default function VerifyTokenForm({
           )}
         />
 
-        <Button type="submit">Submit</Button>
+        <div>
+          {loading ? (
+            <button
+              type="submit"
+              className="mb-3 flex gap-3 py-2 items-center w-full rounded-md px-6 pb-2 pt-2.5 text-xs font-medium  leading-normal text-white shadow-dark-3 transition duration-150 ease-in-out hover:shadow-dark-2 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:shadow-dark-2 shadow-black/30 hover:shadow-dark-strong focus:shadow-dark-strong active:shadow-dark-strong bg-black"
+            >
+              Verifying{" "}
+              <span>
+                <Loader className="animate-spin text-yellow-300" />
+              </span>
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className="mb-3 inline-block w-full rounded-md px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-dark-3 transition duration-150 ease-in-out hover:shadow-dark-2 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:shadow-dark-2 shadow-black/30 hover:shadow-dark-strong focus:shadow-dark-strong active:shadow-dark-strong bg-black"
+            >
+              Verify
+            </button>
+          )}
+        </div>
       </form>
     </Form>
   );

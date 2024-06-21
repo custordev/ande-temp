@@ -42,7 +42,7 @@ export async function createUser(data: User) {
     const token = newUser.token;
     const linkText = "Verify your Account ";
     const message =
-      "Thank you for registering with Boogie. To complete your registration and verify your email address, please enter the following 6-digit verification code on our website :";
+      "Thank you for registering with Ande Template. To complete your registration and verify your email address, please enter the following 6-digit verification code on our website :";
     const sendMail = await resend.emails.send({
       from: "ANDE Template <info@flakolimited.com>",
       to: email,
