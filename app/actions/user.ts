@@ -44,7 +44,7 @@ export async function createUser(data: User) {
     const message =
       "Thank you for registering with Ande Template. To complete your registration and verify your email address, please enter the following 6-digit verification code on our website :";
     const sendMail = await resend.emails.send({
-      from: "ANDE Template <info@flakolimited.com>",
+      from: "ANDE Template <info@kyaja.com>",
       to: email,
       subject: "Verify Your Email Address",
       react: EmailTemplate({ name, token, linkText, message }),
